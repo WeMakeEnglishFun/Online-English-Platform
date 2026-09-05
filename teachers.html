@@ -4,25 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Teach With Us | Online English Platform</title>
+  <title>Teach With Mileo | Join Our Teacher Network</title>
 
   <meta
     name="description"
-    content="Apply to teach online with our global English learning platform. Join a structured, quality-controlled teaching system with verified teachers, progress tracking and academic checkpoints."
+    content="Apply to teach English online with Mileo. Join a structured, supportive teaching platform built around high-quality lessons, meaningful progress and academic checkpoints."
   />
 
   <style>
     :root {
-      --navy: #062f67;
-      --navy-dark: #031d42;
-      --red: #e53222;
-      --cream: #f7f8fb;
+      --ink: #20264d;
+      --indigo: #4b46e5;
+      --indigo-dark: #3532b8;
+      --blue: #22a7f0;
+      --aqua: #2dd4bf;
+      --green: #36c978;
+      --yellow: #ffd166;
+      --coral: #ff6b63;
+      --lavender: #efeefe;
+      --sky: #eef8ff;
+      --mint: #ecfbf5;
+      --peach: #fff2ef;
+      --paper: #fbfbfd;
       --white: #ffffff;
-      --text: #172033;
-      --muted: #637083;
-      --green: #25d366;
-      --border: #dfe5ec;
-      --shadow: 0 14px 35px rgba(2, 29, 66, 0.12);
+      --text: #222747;
+      --muted: #67708a;
+      --border: #e7e8f2;
+      --shadow: 0 18px 48px rgba(53, 50, 184, 0.10);
+      --shadow-soft: 0 10px 30px rgba(32, 38, 77, 0.07);
     }
 
     * {
@@ -31,10 +40,15 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: var(--white);
+      background: var(--paper);
       line-height: 1.6;
     }
 
@@ -43,253 +57,626 @@
       color: inherit;
     }
 
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
     .container {
-      width: min(1120px, 90%);
+      width: min(1160px, 91%);
       margin: 0 auto;
     }
 
+    /* HEADER */
+
     header {
-      background: var(--navy-dark);
-      color: var(--white);
-      padding: 18px 0;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
 
     .nav {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
     .brand {
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.38rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--indigo), var(--blue));
+      box-shadow: 0 8px 18px rgba(75, 70, 229, 0.22);
     }
 
     .nav-link {
-      font-weight: 700;
-      color: var(--white);
-      opacity: 0.9;
+      color: var(--indigo);
+      font-weight: 800;
     }
 
-    .hero {
-      background:
-        linear-gradient(
-          135deg,
-          rgba(3, 29, 66, 0.98),
-          rgba(6, 47, 103, 0.94)
-        );
-      color: var(--white);
-      padding: 90px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
-      line-height: 1.05;
-      margin-bottom: 22px;
-      max-width: 800px;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.86);
-      max-width: 720px;
-      margin-bottom: 28px;
-    }
+    /* BUTTONS */
 
     .button {
-      display: inline-block;
-      background: var(--red);
-      color: var(--white);
-      padding: 15px 24px;
-      border-radius: 12px;
-      font-weight: 800;
-      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--coral), #ff845d);
+      color: white;
+      padding: 15px 23px;
+      border: 0;
+      border-radius: 14px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(255, 107, 99, 0.22);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      cursor: pointer;
     }
 
     .button:hover {
       transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(255, 107, 99, 0.28);
     }
 
-    .hero-card {
-      background: var(--white);
-      color: var(--text);
-      padding: 30px;
-      border-radius: 22px;
-      box-shadow: var(--shadow);
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 80px;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(45, 212, 191, 0.20), transparent 28%),
+        radial-gradient(circle at 90% 15%, rgba(255, 209, 102, 0.22), transparent 24%),
+        radial-gradient(circle at 82% 84%, rgba(255, 107, 99, 0.14), transparent 25%),
+        linear-gradient(180deg, #ffffff 0%, #f7f6ff 100%);
     }
 
-    .verified {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--navy);
-      font-weight: 800;
-      margin-bottom: 16px;
+      background: var(--lavender);
+      color: var(--indigo-dark);
+      border: 1px solid #dedcff;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--aqua);
+    }
+
+    h1 {
+      color: var(--ink);
+      font-size: clamp(2.7rem, 5.8vw, 5.3rem);
+      letter-spacing: -2.7px;
+      line-height: 0.98;
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+
+    .accent {
+      color: var(--indigo);
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.14rem;
+      max-width: 690px;
+      margin-bottom: 30px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .hero-meta span::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 1000;
+      margin-right: 7px;
+    }
+
+    /* JOURNEY CARD */
+
+    .journey-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .journey-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .mini-label {
+      color: var(--indigo);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+    }
+
+    .journey-card h2 {
+      color: var(--ink);
+      font-size: 1.45rem;
+      line-height: 1.2;
+      margin-top: 5px;
     }
 
     .verified-badge {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: var(--white);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
+      min-width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--green), var(--aqua));
+      font-size: 1.1rem;
+      font-weight: 1000;
     }
 
-    .hero-card h2 {
-      margin-bottom: 10px;
-      color: var(--navy-dark);
+    .progress-line {
+      position: relative;
+      margin: 34px 7px 26px;
+      height: 7px;
+      border-radius: 999px;
+      background: #eceef8;
     }
+
+    .progress-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 68%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(
+        90deg,
+        var(--indigo),
+        var(--blue),
+        var(--aqua)
+      );
+    }
+
+    .node {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 4px solid white;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 900;
+    }
+
+    .n1 {
+      left: 0%;
+      background: var(--green);
+    }
+
+    .n2 {
+      left: 34%;
+      background: var(--blue);
+    }
+
+    .n3 {
+      left: 68%;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .n4 {
+      left: 100%;
+      background: #dfe2ec;
+      color: #8d95aa;
+    }
+
+    .journey-legend {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 750;
+    }
+
+    .lesson-tools {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .tool-pill {
+      border-radius: 15px;
+      padding: 14px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      background: var(--sky);
+      color: #27628a;
+      border: 1px solid #dceefa;
+    }
+
+    .tool-pill:nth-child(2) {
+      background: var(--mint);
+      color: #26735a;
+    }
+
+    .tool-pill:nth-child(3) {
+      background: var(--peach);
+      color: #a34f48;
+    }
+
+    .tool-pill:nth-child(4) {
+      background: #fff8df;
+      color: #856b1d;
+    }
+
+    /* SECTIONS */
 
     section {
-      padding: 80px 0;
+      padding: 82px 0;
     }
 
     .section-title {
+      max-width: 770px;
+      margin: 0 auto 42px;
       text-align: center;
-      max-width: 760px;
-      margin: 0 auto 45px;
+    }
+
+    .kicker {
+      color: var(--indigo);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 8px;
     }
 
     .section-title h2 {
+      color: var(--ink);
       font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--navy-dark);
+      line-height: 1.05;
       margin-bottom: 14px;
     }
 
     .section-title p {
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.03rem;
     }
+
+    /* FEATURE CARDS */
 
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .card {
-      background: var(--cream);
+      background: white;
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
+      border-radius: 22px;
+      padding: 27px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+      background: var(--lavender);
+    }
+
+    .card:nth-child(2) .card-icon {
+      background: var(--mint);
+    }
+
+    .card:nth-child(3) .card-icon {
+      background: #fff6d7;
     }
 
     .card h3 {
-      color: var(--navy);
-      margin-bottom: 10px;
+      color: var(--ink);
+      margin-bottom: 9px;
+      font-size: 1.1rem;
     }
 
     .card p {
       color: var(--muted);
     }
 
+    /* TEACHER VALUE */
+
+    .teacher-value {
+      background: linear-gradient(180deg, #f7f8ff 0%, #ffffff 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .value-panel {
+      background: var(--ink);
+      color: white;
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .value-panel h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .value-panel p {
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 22px;
+    }
+
+    .teacher-progress {
+      display: grid;
+      gap: 11px;
+    }
+
+    .teacher-progress div {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 14px;
+      border-radius: 13px;
+      font-size: 0.9rem;
+      font-weight: 750;
+    }
+
+    .teacher-progress strong {
+      color: var(--yellow);
+    }
+
+    .value-copy h2 {
+      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .value-copy p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 14px 15px;
+    }
+
+    .check {
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: var(--mint);
+      color: var(--green);
+      font-size: 0.8rem;
+      font-weight: 1000;
+    }
+
+    .check-item strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .check-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* REQUIREMENTS */
+
     .requirements {
-      background: var(--cream);
+      background: white;
     }
 
     .requirements-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
     }
 
     .requirements-box {
-      background: var(--white);
+      border-radius: 24px;
       padding: 30px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .requirements-box:first-child {
+      background: linear-gradient(180deg, #faf9ff, #ffffff);
+    }
+
+    .requirements-box:last-child {
+      background: linear-gradient(180deg, #f4fcf9, #ffffff);
     }
 
     .requirements-box h3 {
-      color: var(--navy-dark);
+      color: var(--ink);
       margin-bottom: 18px;
+      font-size: 1.2rem;
     }
 
     .requirements-box ul {
-      padding-left: 20px;
+      list-style: none;
+      display: grid;
+      gap: 11px;
     }
 
     .requirements-box li {
-      margin-bottom: 10px;
-      color: var(--text);
+      position: relative;
+      padding-left: 27px;
     }
+
+    .requirements-box li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 1000;
+    }
+
+    /* VERIFICATION PROCESS */
 
     .process {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 17px;
     }
 
     .step {
-      border-top: 4px solid var(--navy);
-      padding: 20px 18px;
-      background: var(--white);
-      box-shadow: var(--shadow);
-      border-radius: 14px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
     }
 
     .step-number {
-      display: inline-block;
-      font-weight: 900;
-      color: var(--red);
-      margin-bottom: 8px;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      background: var(--indigo);
+      font-weight: 1000;
+      margin-bottom: 17px;
+    }
+
+    .step:nth-child(2) .step-number {
+      background: var(--blue);
+    }
+
+    .step:nth-child(3) .step-number {
+      background: var(--aqua);
+    }
+
+    .step:nth-child(4) .step-number {
+      background: var(--green);
     }
 
     .step h3 {
-      margin-bottom: 8px;
-      color: var(--navy-dark);
+      color: var(--ink);
+      margin-bottom: 7px;
     }
 
+    .step p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* APPLICATION */
+
     .application {
-      background: var(--navy-dark);
-      color: var(--white);
+      background:
+        radial-gradient(circle at 7% 20%, rgba(45, 212, 191, 0.18), transparent 25%),
+        radial-gradient(circle at 92% 80%, rgba(255, 107, 99, 0.14), transparent 23%),
+        #3532b8;
+      color: white;
     }
 
     .application-wrap {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    .application h2 {
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 12px;
+    .application .section-title h2,
+    .application .section-title p,
+    .application .kicker {
+      color: white;
     }
 
-    .application-intro {
-      text-align: center;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 35px;
+    .application .section-title p {
+      color: rgba(255, 255, 255, 0.78);
     }
 
     form {
-      background: var(--white);
+      background: white;
       color: var(--text);
-      border-radius: 20px;
-      padding: 32px;
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: 0 24px 56px rgba(12, 12, 65, 0.2);
     }
 
     .form-grid {
@@ -299,7 +686,7 @@
     }
 
     .field {
-      margin-bottom: 18px;
+      margin-bottom: 4px;
     }
 
     .field.full {
@@ -308,7 +695,8 @@
 
     label {
       display: block;
-      font-weight: 700;
+      font-weight: 850;
+      color: var(--ink);
       margin-bottom: 7px;
     }
 
@@ -316,42 +704,53 @@
     select,
     textarea {
       width: 100%;
+      border: 1px solid #dfe2ee;
+      background: #fcfcfe;
+      color: var(--text);
+      border-radius: 12px;
       padding: 13px 14px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #aaa7ff;
+      box-shadow: 0 0 0 4px rgba(75, 70, 229, 0.08);
+      background: white;
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 112px;
       resize: vertical;
     }
 
     .submit-button {
-      border: 0;
-      cursor: pointer;
       width: 100%;
+      margin-top: 22px;
       font-size: 1rem;
     }
 
     .note {
-      margin-top: 12px;
       color: var(--muted);
-      font-size: 0.88rem;
       text-align: center;
+      margin-top: 14px;
+      font-size: 0.86rem;
     }
 
     footer {
-      background: #02142f;
-      color: rgba(255, 255, 255, 0.72);
+      background: #20264d;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 27px 0;
       text-align: center;
-      padding: 25px 0;
       font-size: 0.9rem;
     }
 
-    @media (max-width: 850px) {
+    /* MOBILE */
+
+    @media (max-width: 900px) {
       .hero-grid,
-      .requirements-grid {
+      .value-grid {
         grid-template-columns: 1fr;
       }
 
@@ -361,15 +760,28 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
       .cards,
       .process,
+      .requirements-grid,
       .form-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding: 65px 0;
+      .lesson-tools {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1.6px;
+      }
+
+      form {
+        padding: 23px;
+      }
+
+      .nav-link {
+        display: none;
       }
     }
   </style>
@@ -377,277 +789,731 @@
 
 <body>
 
-  <header>
-    <div class="container nav">
-      <div class="brand">Online English Platform</div>
-      <a href="#apply" class="nav-link">Apply to teach</a>
-    </div>
-  </header>
+<header>
+  <div class="container nav">
 
-  <main>
+    <a href="#" class="brand">
+      <span class="brand-mark">M</span>
+      <span>Mileo</span>
+    </a>
 
-    <section class="hero">
-      <div class="container hero-grid">
+    <a href="#apply" class="nav-link">
+      Apply to teach →
+    </a>
 
-        <div>
-          <div class="eyebrow">Teach English online. Be part of something better.</div>
+  </div>
+</header>
 
-          <h1>Great teachers deserve a better online teaching experience.</h1>
 
-          <p>
-            Join a global English learning platform built around structured courses,
-            measurable student progress and genuine academic quality.
-          </p>
+<main>
 
-          <a href="#apply" class="button">Apply to become a verified teacher</a>
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Help students make meaningful progress
         </div>
 
-        <div class="hero-card">
-          <div class="verified">
-            <span class="verified-badge">✓</span>
-            Verified Teacher
-          </div>
+        <h1>
+          Great teaching deserves a
+          <span class="accent">better platform.</span>
+        </h1>
 
-          <h2>Quality you can stand behind.</h2>
-
-          <p>
-            Every approved teacher is carefully screened and assessed before becoming
-            part of the platform.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-
-        <div class="section-title">
-          <h2>More than a tutoring marketplace</h2>
-          <p>
-            We are building a managed online English learning system where teachers
-            deliver structured programmes and students can clearly see their progress.
-          </p>
-        </div>
-
-        <div class="cards">
-
-          <div class="card">
-            <h3>Structured courses</h3>
-            <p>
-              You teach within professionally designed learning pathways while still
-              adapting lessons to the individual student.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Progress tracking</h3>
-            <p>
-              Students can follow their learning journey, completed skills, assessments,
-              milestones and upcoming targets.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Academic checkpoints</h3>
-            <p>
-              Independent progress checks help confirm that students are progressing
-              and that the programme is working effectively.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="requirements">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Who are we looking for?</h2>
-          <p>
-            We want professional, reliable teachers who care about helping students
-            achieve measurable results.
-          </p>
-        </div>
-
-        <div class="requirements-grid">
-
-          <div class="requirements-box">
-            <h3>We value</h3>
-
-            <ul>
-              <li>Strong English teaching ability</li>
-              <li>Professional communication</li>
-              <li>Reliability and punctuality</li>
-              <li>Ability to build rapport with students</li>
-              <li>Willingness to follow a structured programme</li>
-              <li>Commitment to student progress</li>
-              <li>Openness to feedback and professional development</li>
-            </ul>
-          </div>
-
-          <div class="requirements-box">
-            <h3>Useful experience</h3>
-
-            <ul>
-              <li>General English</li>
-              <li>Cambridge exam preparation</li>
-              <li>IELTS preparation</li>
-              <li>Business English</li>
-              <li>Children and teenagers</li>
-              <li>Conversation and pronunciation</li>
-              <li>Online teaching experience</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-
-        <div class="section-title">
-          <h2>How teacher verification works</h2>
-          <p>
-            Verification is not a popularity score. It confirms that the teacher has
-            passed our quality-control process.
-          </p>
-        </div>
-
-        <div class="process">
-
-          <div class="step">
-            <div class="step-number">01</div>
-            <h3>Apply</h3>
-            <p>Tell us about your qualifications, experience and availability.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">02</div>
-            <h3>Screening</h3>
-            <p>We review your profile, experience and supporting information.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">03</div>
-            <h3>Interview & observation</h3>
-            <p>Your communication and teaching standard are assessed.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">04</div>
-            <h3>Verified</h3>
-            <p>Approved teachers receive verified status and can teach students.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="application" id="apply">
-      <div class="container application-wrap">
-
-        <h2>Apply to teach with us</h2>
-
-        <p class="application-intro">
-          We are building our first international network of approved English teachers.
+        <p class="hero-copy">
+          Mileo is building a modern online English school where
+          professional teachers deliver structured courses,
+          support real progress and have the tools they need
+          to teach brilliantly.
         </p>
 
-        <form>
+        <a href="#apply" class="button">
+          Apply to teach with Mileo
+        </a>
 
-          <div class="form-grid">
+        <div class="hero-meta">
+          <span>Structured programmes</span>
+          <span>Professional teacher network</span>
+          <span>Progress students can see</span>
+        </div>
 
-            <div class="field">
-              <label for="firstName">First name</label>
-              <input id="firstName" type="text" required />
+      </div>
+
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+
+          <div>
+            <div class="mini-label">
+              The Mileo learning journey
             </div>
 
-            <div class="field">
-              <label for="lastName">Last name</label>
-              <input id="lastName" type="text" required />
-            </div>
+            <h2>Teach towards something.</h2>
+          </div>
 
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" type="email" required />
-            </div>
+          <div class="verified-badge">✓</div>
 
-            <div class="field">
-              <label for="country">Country of residence</label>
-              <input id="country" type="text" required />
-            </div>
+        </div>
 
-            <div class="field">
-              <label for="timezone">Time zone</label>
-              <input id="timezone" type="text" placeholder="e.g. Europe/Rome" />
-            </div>
 
-            <div class="field">
-              <label for="experience">Years of teaching experience</label>
-              <select id="experience">
-                <option value="">Choose...</option>
-                <option>Less than 1 year</option>
-                <option>1–2 years</option>
-                <option>3–5 years</option>
-                <option>6–10 years</option>
-                <option>10+ years</option>
-              </select>
-            </div>
+        <div class="progress-line">
 
-            <div class="field full">
-              <label for="qualifications">Qualifications</label>
-              <textarea
-                id="qualifications"
-                placeholder="CELTA, DELTA, TEFL, TESOL, teaching degree, Cambridge qualifications, etc."
-              ></textarea>
-            </div>
+          <div class="progress-fill"></div>
 
-            <div class="field full">
-              <label for="specialisms">Teaching specialisms</label>
-              <textarea
-                id="specialisms"
-                placeholder="General English, Cambridge, IELTS, Business English, children, teenagers, pronunciation, etc."
-              ></textarea>
-            </div>
+          <div class="node n1">✓</div>
+          <div class="node n2">✓</div>
+          <div class="node n3">★</div>
+          <div class="node n4">○</div>
 
-            <div class="field full">
-              <label for="availability">Typical weekly availability</label>
-              <textarea
-                id="availability"
-                placeholder="Tell us which days and times you are normally available."
-              ></textarea>
-            </div>
+        </div>
 
-            <div class="field full">
-              <label for="motivation">Why would you like to work with us?</label>
-              <textarea id="motivation"></textarea>
+
+        <div class="journey-legend">
+          <span>Start</span>
+          <span>Skills built</span>
+          <span>Checkpoint</span>
+          <span>Next level</span>
+        </div>
+
+
+        <div class="lesson-tools">
+          <div class="tool-pill">✎ Live corrections</div>
+          <div class="tool-pill">＋ Vocabulary bank</div>
+          <div class="tool-pill">▣ Lesson materials</div>
+          <div class="tool-pill">★ Progress &amp; targets</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PLATFORM -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="kicker">
+          More than a marketplace
+        </div>
+
+        <h2>
+          A teaching experience built around progress.
+        </h2>
+
+        <p>
+          Mileo is designed to give teachers the flexibility
+          of online teaching without leaving students to
+          navigate their learning alone.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-icon">↗</div>
+
+          <h3>Structured learning pathways</h3>
+
+          <p>
+            Teach within professionally designed programmes
+            with clear outcomes, while adapting lessons to
+            the individual learner.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">◎</div>
+
+          <h3>Useful teaching tools</h3>
+
+          <p>
+            Build a lasting lesson record with vocabulary,
+            corrections, materials, homework and the
+            student's next targets.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">★</div>
+
+          <h3>Meaningful checkpoints</h3>
+
+          <p>
+            Students can see what they have achieved,
+            what comes next and whether their progress
+            is on track.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY TEACH -->
+
+  <section class="teacher-value">
+
+    <div class="container value-grid">
+
+      <div class="value-panel">
+
+        <div
+          class="mini-label"
+          style="color:#9fe8dc;"
+        >
+          A platform that supports teachers
+        </div>
+
+        <h3>
+          Spend more time teaching,
+          less time piecing systems together.
+        </h3>
+
+        <p>
+          We want Mileo to give great teachers a
+          professional home for online teaching.
+        </p>
+
+        <div class="teacher-progress">
+
+          <div>
+            <strong>01</strong>
+            Students and course information in one place
+          </div>
+
+          <div>
+            <strong>02</strong>
+            Booking, availability and lesson history
+          </div>
+
+          <div>
+            <strong>03</strong>
+            Shared notes, corrections and materials
+          </div>
+
+          <div>
+            <strong>04</strong>
+            Progress, checkpoints and teacher development
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="value-copy">
+
+        <div class="kicker">
+          Why teach with Mileo?
+        </div>
+
+        <h2>
+          Professional freedom without teaching alone.
+        </h2>
+
+        <p>
+          We are building the systems around the lesson
+          so teachers can focus on relationships,
+          feedback and meaningful student progress.
+        </p>
+
+
+        <div class="check-list">
+
+          <div class="check-item">
+
+            <div class="check">✓</div>
+
+            <div>
+              <strong>Flexible availability</strong>
+
+              <span>
+                Offer the times you want to teach and
+                block the times you cannot.
+              </span>
             </div>
 
           </div>
 
-          <button class="button submit-button" type="submit">
-            Submit teacher application
-          </button>
 
-          <p class="note">
-            This form is currently a prototype. Application storage and automatic
-            processing will be connected in the next development phase.
-          </p>
+          <div class="check-item">
 
-        </form>
+            <div class="check">✓</div>
+
+            <div>
+              <strong>Course choice</strong>
+
+              <span>
+                Teach the course types and learner
+                profiles that suit your experience.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="check-item">
+
+            <div class="check">✓</div>
+
+            <div>
+              <strong>Clear student history</strong>
+
+              <span>
+                See previous learning, targets and progress
+                instead of starting from zero.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="check-item">
+
+            <div class="check">✓</div>
+
+            <div>
+              <strong>Quality recognised</strong>
+
+              <span>
+                Verification and future professional
+                development are based on genuine
+                teaching quality.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
-    </section>
 
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 Online English Platform. All rights reserved.
     </div>
-  </footer>
+
+  </section>
+
+
+  <!-- REQUIREMENTS -->
+
+  <section class="requirements">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="kicker">
+          Teacher standards
+        </div>
+
+        <h2>
+          Who are we looking for?
+        </h2>
+
+        <p>
+          Professional, reliable teachers who care
+          about student progress and want to be part
+          of a quality-focused online school.
+        </p>
+
+      </div>
+
+
+      <div class="requirements-grid">
+
+        <div class="requirements-box">
+
+          <h3>What we value</h3>
+
+          <ul>
+            <li>Strong English teaching ability</li>
+            <li>Professional communication</li>
+            <li>Reliability and punctuality</li>
+            <li>Ability to build rapport online</li>
+            <li>Commitment to measurable student progress</li>
+            <li>Confidence working within structured programmes</li>
+            <li>Openness to feedback and professional development</li>
+          </ul>
+
+        </div>
+
+
+        <div class="requirements-box">
+
+          <h3>Experience we're interested in</h3>
+
+          <ul>
+            <li>General English</li>
+            <li>Cambridge exam preparation</li>
+            <li>IELTS preparation</li>
+            <li>Business English</li>
+            <li>Children and teenagers</li>
+            <li>Conversation and pronunciation</li>
+            <li>Online English teaching</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- VERIFICATION -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="kicker">
+          Verification journey
+        </div>
+
+        <h2>
+          Quality matters from the beginning.
+        </h2>
+
+        <p>
+          Mileo verification is designed to confirm
+          teaching quality and professionalism,
+          not simply popularity or profile views.
+        </p>
+
+      </div>
+
+
+      <div class="process">
+
+        <div class="step">
+
+          <div class="step-number">01</div>
+
+          <h3>Apply</h3>
+
+          <p>
+            Tell us about your experience,
+            qualifications, specialisms
+            and availability.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">02</div>
+
+          <h3>Screening</h3>
+
+          <p>
+            We review your teaching background
+            and suitability for the Mileo network.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">03</div>
+
+          <h3>Interview &amp; observation</h3>
+
+          <p>
+            We look at communication,
+            professionalism and teaching quality.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">04</div>
+
+          <h3>Verified</h3>
+
+          <p>
+            Approved teachers can join the network
+            and begin teaching eligible courses.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- APPLICATION -->
+
+  <section class="application" id="apply">
+
+    <div class="container application-wrap">
+
+      <div class="section-title">
+
+        <div class="kicker">
+          Join Mileo
+        </div>
+
+        <h2>
+          Apply to teach with us.
+        </h2>
+
+        <p>
+          We are building our first international
+          network of approved English teachers.
+        </p>
+
+      </div>
+
+
+      <form>
+
+        <div class="form-grid">
+
+          <div class="field">
+
+            <label for="firstName">
+              First name
+            </label>
+
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+            />
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="lastName">
+              Last name
+            </label>
+
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+            />
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+            />
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="country">
+              Country of residence
+            </label>
+
+            <input
+              id="country"
+              name="country"
+              type="text"
+              required
+            />
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="timezone">
+              Time zone
+            </label>
+
+            <input
+              id="timezone"
+              name="timezone"
+              type="text"
+              placeholder="e.g. Europe/Rome"
+            />
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="experience">
+              Years of teaching experience
+            </label>
+
+            <select
+              id="experience"
+              name="experience"
+            >
+
+              <option value="">
+                Choose...
+              </option>
+
+              <option>
+                Less than 1 year
+              </option>
+
+              <option>
+                1–2 years
+              </option>
+
+              <option>
+                3–5 years
+              </option>
+
+              <option>
+                6–10 years
+              </option>
+
+              <option>
+                10+ years
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label for="qualifications">
+              Qualifications
+            </label>
+
+            <textarea
+              id="qualifications"
+              name="qualifications"
+              placeholder="CELTA, DELTA, TEFL, TESOL, teaching degree or other relevant qualifications."
+            ></textarea>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label for="specialisms">
+              Teaching specialisms
+            </label>
+
+            <textarea
+              id="specialisms"
+              name="specialisms"
+              placeholder="General English, Cambridge, IELTS, Business English, children, teenagers, pronunciation, etc."
+            ></textarea>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label for="availability">
+              Typical weekly availability
+            </label>
+
+            <textarea
+              id="availability"
+              name="availability"
+              placeholder="Tell us which days and times you are normally available."
+            ></textarea>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label for="motivation">
+              Why would you like to teach with Mileo?
+            </label>
+
+            <textarea
+              id="motivation"
+              name="motivation"
+              placeholder="Tell us what matters to you as a teacher and what interests you about this model."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="button submit-button"
+          type="submit"
+        >
+          Submit teacher application
+        </button>
+
+
+        <p class="note">
+          Prototype only: application storage
+          and processing are not connected yet.
+        </p>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+    © 2026 Mileo. All rights reserved.
+  </div>
+
+</footer>
 
 </body>
 </html>
